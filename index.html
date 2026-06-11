@@ -7,9 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
 <style>
-
+ 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
 :root {
   --w: #FFFFFF;
   --off: #F8F8F6;
@@ -17,9 +17,9 @@
   --mid: #999896;
   --rule: #E6E6E3;
 }
-
+ 
 html { scroll-behavior: smooth; }
-
+ 
 body {
   background: var(--w);
   color: var(--k);
@@ -28,7 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-
+ 
 /* ── NAV ── */
 nav {
   position: fixed;
@@ -44,7 +44,7 @@ nav {
   backdrop-filter: blur(8px);
   transition: border-color 0.4s;
 }
-
+ 
 .nav-logo {
   font-family: 'DM Serif Display', serif;
   font-size: 1.05rem;
@@ -53,7 +53,7 @@ nav {
   color: var(--k);
   text-decoration: none;
 }
-
+ 
 .nav-links {
   position: absolute;
   left: 50%;
@@ -62,7 +62,7 @@ nav {
   gap: 40px;
   list-style: none;
 }
-
+ 
 .nav-links a {
   font-size: 0.65rem;
   letter-spacing: 0.16em;
@@ -72,9 +72,9 @@ nav {
   font-weight: 400;
   transition: color 0.2s;
 }
-
+ 
 .nav-links a:hover { color: var(--k); }
-
+ 
 .nav-enquire {
   font-size: 0.65rem;
   letter-spacing: 0.16em;
@@ -86,9 +86,9 @@ nav {
   border-bottom: 1px solid var(--k);
   transition: color 0.2s, border-color 0.2s;
 }
-
+ 
 .nav-enquire:hover { color: var(--mid); border-color: var(--mid); }
-
+ 
 /* ── OPENING ── */
 .opening {
   height: 100vh;
@@ -101,7 +101,7 @@ nav {
   position: relative;
   overflow: hidden;
 }
-
+ 
 .opening-pre {
   font-size: 0.62rem;
   letter-spacing: 0.32em;
@@ -112,7 +112,7 @@ nav {
   opacity: 0;
   animation: rise 1.1s ease forwards 0.5s;
 }
-
+ 
 .opening-title {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(3.6rem, 8vw, 8rem);
@@ -123,12 +123,12 @@ nav {
   opacity: 0;
   animation: rise 1.3s ease forwards 0.7s;
 }
-
+ 
 .opening-title em {
   font-style: italic;
   color: var(--mid);
 }
-
+ 
 .opening-line {
   margin-top: 36px;
   font-size: 0.8rem;
@@ -139,7 +139,7 @@ nav {
   opacity: 0;
   animation: rise 1.3s ease forwards 0.9s;
 }
-
+ 
 .opening-scroll {
   position: absolute;
   bottom: 44px;
@@ -152,21 +152,74 @@ nav {
   opacity: 0;
   animation: rise 1s ease forwards 1.4s;
 }
-
+ 
 .scroll-label {
   font-size: 0.58rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--mid);
 }
-
+ 
 .scroll-bar {
   width: 1px;
   height: 48px;
   background: linear-gradient(to bottom, var(--rule), transparent);
   animation: pulse 2s ease-in-out infinite;
 }
-
+ 
+/* ── MANIFESTO ── */
+.manifesto {
+  border-top: 1px solid var(--rule);
+  background: var(--k);
+  padding: 100px 52px;
+}
+ 
+.manifesto-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+ 
+.manifesto-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  font-weight: 400;
+  padding-top: 6px;
+}
+ 
+.manifesto-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  line-height: 1.45;
+  color: rgba(255,255,255,0.85);
+  font-style: italic;
+}
+ 
+.manifesto-quote strong {
+  font-style: normal;
+  color: rgba(255,255,255,0.95);
+}
+ 
+.manifesto-rule {
+  width: 32px;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 32px 0;
+}
+ 
+.manifesto-body {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 2;
+  letter-spacing: 0.02em;
+  max-width: 480px;
+}
+ 
 /* ── ABOUT ── */
 .about {
   max-width: 800px;
@@ -174,7 +227,7 @@ nav {
   padding: 120px 52px;
   text-align: center;
 }
-
+ 
 .about-text {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(1.5rem, 2.6vw, 2.2rem);
@@ -182,12 +235,12 @@ nav {
   color: var(--k);
   font-style: italic;
 }
-
+ 
 .about-text strong {
   font-style: normal;
   color: var(--k);
 }
-
+ 
 .about-sub {
   margin-top: 36px;
   font-size: 0.78rem;
@@ -198,7 +251,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
-
+ 
 /* ── COLLECTION ── */
 .collection {
   border-top: 1px solid var(--rule);
@@ -206,14 +259,14 @@ nav {
   max-width: 1440px;
   margin: 0 auto;
 }
-
+ 
 .col-head {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 64px;
 }
-
+ 
 .col-label {
   font-size: 0.6rem;
   letter-spacing: 0.28em;
@@ -221,14 +274,14 @@ nav {
   color: var(--mid);
   font-weight: 400;
 }
-
+ 
 .col-title {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 400;
   color: var(--k);
 }
-
+ 
 .col-note {
   font-size: 0.68rem;
   color: var(--mid);
@@ -237,121 +290,117 @@ nav {
   text-align: right;
   line-height: 1.7;
 }
-
-/* Stone list — editorial rows, not grid */
-.stones-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.stone-row {
+ 
+/* Stone cards — 4-column grid */
+.stones-grid {
   display: grid;
-  grid-template-columns: 1fr 2px 2fr 2px 1fr;
-  align-items: stretch;
-  cursor: pointer;
-  background: var(--w);
-  transition: background 0.3s;
-  border: 1px solid var(--rule);
-  border-bottom: none;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
 }
-
-.stone-row:last-child { border-bottom: 1px solid var(--rule); }
-
-.stone-row:hover { background: var(--off); }
-
-.stone-row.sold { opacity: 0.45; cursor: default; }
-
-.sr-divider { background: var(--rule); }
-
-.sr-location {
-  padding: 32px 36px;
+ 
+.stone-card {
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 6px;
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
 }
-
-.sr-loc-country {
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
+ 
+.stone-card:hover { background: var(--off); }
+.stone-card.sold { cursor: default; }
+ 
+.sc-visual {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: var(--off);
+  border-bottom: 1px solid var(--rule);
+  transition: background 0.3s, font-size 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+ 
+.stone-card:hover .sc-visual {
+  background: #EEEDE9;
+  font-size: 5.8rem;
+}
+ 
+.sc-sold-banner {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  background: var(--w);
+  padding: 5px 10px;
+  border: 1px solid var(--rule);
+}
+ 
+.sc-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0;
+}
+ 
+.sc-type {
+  font-size: 0.55rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--mid);
   font-weight: 400;
+  margin-bottom: 8px;
 }
-
-.sr-loc-name {
+ 
+.sc-name {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   color: var(--k);
-  line-height: 1.2;
-}
-
-.sr-loc-coords {
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  color: var(--mid);
-  font-family: 'DM Sans', sans-serif;
-  margin-top: 4px;
-}
-
-.sr-main {
-  padding: 32px 36px;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.sr-thumb {
-  width: 72px;
-  height: 72px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  background: var(--off);
-  transition: background 0.3s;
-}
-
-.stone-row:hover .sr-thumb { background: var(--rule); }
-
-.sr-info { flex: 1; }
-
-.sr-name {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.3rem;
-  color: var(--k);
+  line-height: 1.15;
   margin-bottom: 6px;
-  line-height: 1.1;
 }
-
-.sr-desc {
-  font-size: 0.72rem;
+ 
+.sc-origin {
+  font-size: 0.65rem;
   color: var(--mid);
-  line-height: 1.7;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
-
-.sr-right {
-  padding: 32px 36px;
+ 
+.sc-footer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
-  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
 }
-
-.sr-age {
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+ 
+.sc-price {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--k);
+}
+ 
+.sc-price-note {
+  font-size: 0.58rem;
   color: var(--mid);
-  text-align: right;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-top: 2px;
 }
-
-.sr-cta {
-  font-size: 0.62rem;
+ 
+.sc-cta {
+  font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--k);
@@ -359,277 +408,143 @@ nav {
   border-bottom: 1px solid var(--k);
   padding-bottom: 1px;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.25s;
+  white-space: nowrap;
 }
-
-.stone-row:hover .sr-cta { opacity: 1; }
-
-.sr-sold-tag {
+ 
+.stone-card:hover .sc-cta { opacity: 1; }
+ 
+.sc-sold-label {
   font-size: 0.58rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mid);
 }
-
-/* ── STONE DETAIL (full-screen overlay) ── */
-.detail-overlay {
-  position: fixed;
-  inset: 0;
-  background: var(--k);
-  z-index: 200;
-  display: none;
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-.detail-overlay.open {
-  display: flex;
-  animation: overlayIn 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-@keyframes overlayIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.detail-nav {
-  position: sticky;
-  top: 0;
-  background: var(--k);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 0 52px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 10;
-  flex-shrink: 0;
-}
-
-.detail-back {
-  background: none;
-  border: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  cursor: pointer;
-  transition: color 0.2s;
-  font-weight: 400;
-}
-
-.detail-back:hover { color: rgba(255,255,255,0.85); }
-
-.detail-ref {
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.25);
-  font-variant-numeric: tabular-nums;
-}
-
-.detail-body {
-  flex: 1;
-  max-width: 1100px;
+ 
+/* ── PROVENANCE ── */
+.provenance {
+  border-top: 1px solid var(--rule);
+  padding: 100px 52px;
+  max-width: 1440px;
   margin: 0 auto;
-  width: 100%;
-  padding: 80px 52px 120px;
+}
+ 
+.prov-head {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
   align-items: start;
+  margin-bottom: 72px;
 }
-
-.detail-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: sticky;
-  top: 100px;
-}
-
-.detail-stone-display {
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-}
-
-.detail-photo-note {
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  color: rgba(255,255,255,0.2);
-  text-align: center;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-
-.detail-content { color: rgba(255,255,255,0.9); }
-
-.dc-pre {
+ 
+.prov-label {
   font-size: 0.58rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 16px;
-  display: block;
+  color: var(--mid);
   font-weight: 400;
+  padding-top: 4px;
 }
-
-.dc-name {
+ 
+.prov-intro h2 {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  line-height: 1.05;
-  color: rgba(255,255,255,0.92);
-  margin-bottom: 8px;
-}
-
-.dc-origin {
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 40px;
-  font-weight: 400;
-}
-
-.dc-story {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-
-.dc-desc {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 2;
-  letter-spacing: 0.02em;
-  margin-bottom: 48px;
-}
-
-/* Specs table on dark bg */
-.dc-specs {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-bottom: 52px;
-}
-
-.dc-spec {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  font-size: 0.72rem;
-}
-
-.dcs-label {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.25);
-  font-weight: 400;
-}
-
-.dcs-value {
-  color: rgba(255,255,255,0.7);
-  font-variant-numeric: tabular-nums;
-}
-
-/* Enquiry form inside detail */
-.dc-enquiry {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding-top: 48px;
-}
-
-.de-head {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.3rem;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 8px;
-}
-
-.de-sub {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.3);
-  line-height: 1.7;
-  margin-bottom: 36px;
-  letter-spacing: 0.02em;
-}
-
-.de-field {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--k);
   margin-bottom: 20px;
 }
-
-.de-label {
-  display: block;
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
-  font-weight: 400;
-  margin-bottom: 8px;
+ 
+.prov-intro h2 em { font-style: italic; }
+ 
+.prov-intro p {
+  font-size: 0.78rem;
+  color: var(--mid);
+  line-height: 2;
+  letter-spacing: 0.02em;
+  max-width: 520px;
 }
-
-.de-input, .de-textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-  padding: 10px 0;
-  color: rgba(255,255,255,0.85);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 300;
-  outline: none;
-  transition: border-color 0.2s;
+ 
+/* Chain of custody — horizontal steps */
+.prov-chain {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--rule);
+}
+ 
+.prov-step {
+  padding: 40px 36px 40px 0;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+ 
+.prov-step:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+ 
+.prov-step:not(:first-child) {
+  padding-left: 36px;
+}
+ 
+.prov-step-num {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: block;
+}
+ 
+.prov-step-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--k);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+ 
+.prov-step-desc {
+  font-size: 0.7rem;
+  color: var(--mid);
+  line-height: 1.8;
   letter-spacing: 0.02em;
 }
-
-.de-input::placeholder, .de-textarea::placeholder {
-  color: rgba(255,255,255,0.15);
+ 
+/* Anti-marketplace statement */
+.no-cart {
+  margin-top: 72px;
+  border: 1px solid var(--rule);
+  padding: 44px 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  background: var(--off);
 }
-
-.de-input:focus, .de-textarea:focus {
-  border-bottom-color: rgba(255,255,255,0.4);
+ 
+.no-cart-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  line-height: 1.45;
+  color: var(--k);
+  font-style: italic;
 }
-
-.de-textarea { resize: none; min-height: 80px; padding-top: 12px; }
-
-.de-submit {
-  margin-top: 32px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.7);
-  padding: 16px 36px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 400;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
+ 
+.no-cart-text strong {
+  font-style: normal;
 }
-
-.de-submit:hover {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.95);
-  border-color: rgba(255,255,255,0.35);
+ 
+.no-cart-sub {
+  font-size: 0.75rem;
+  color: var(--mid);
+  line-height: 2;
+  letter-spacing: 0.02em;
 }
-
-.de-note {
-  margin-top: 16px;
-  font-size: 0.6rem;
-  color: rgba(255,255,255,0.18);
-  letter-spacing: 0.06em;
-  line-height: 1.6;
-}
-
+ 
+.no-cart-sub p { margin-bottom: 12px; }
+.no-cart-sub p:last-child { margin-bottom: 0; }
+ 
 /* ── CERTIFICATE SECTION ── */
 .cert-section {
   border-top: 1px solid var(--rule);
@@ -641,7 +556,7 @@ nav {
   gap: 100px;
   align-items: center;
 }
-
+ 
 .cert-text .label {
   display: block;
   font-size: 0.6rem;
@@ -651,7 +566,7 @@ nav {
   font-weight: 400;
   margin-bottom: 24px;
 }
-
+ 
 .cert-text h2 {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
@@ -659,9 +574,9 @@ nav {
   margin-bottom: 24px;
   color: var(--k);
 }
-
+ 
 .cert-text h2 em { font-style: italic; }
-
+ 
 .cert-text p {
   font-size: 0.78rem;
   color: var(--mid);
@@ -670,14 +585,14 @@ nav {
   margin-bottom: 16px;
   max-width: 420px;
 }
-
+ 
 .cert-doc {
   border: 1px solid var(--rule);
   padding: 44px;
   background: var(--off);
   position: relative;
 }
-
+ 
 .cert-doc-header {
   display: flex;
   justify-content: space-between;
@@ -686,7 +601,7 @@ nav {
   margin-bottom: 28px;
   border-bottom: 1px solid var(--rule);
 }
-
+ 
 .cert-doc-brand {
   font-family: 'DM Serif Display', serif;
   font-size: 0.95rem;
@@ -694,7 +609,7 @@ nav {
   text-transform: uppercase;
   color: var(--k);
 }
-
+ 
 .cert-doc-type {
   font-size: 0.58rem;
   letter-spacing: 0.2em;
@@ -703,7 +618,7 @@ nav {
   margin-top: 4px;
   font-weight: 400;
 }
-
+ 
 .cert-doc-num {
   font-size: 0.58rem;
   letter-spacing: 0.14em;
@@ -711,7 +626,7 @@ nav {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-
+ 
 .cert-field {
   display: flex;
   justify-content: space-between;
@@ -720,12 +635,12 @@ nav {
   border-bottom: 1px solid var(--rule);
   font-size: 0.72rem;
 }
-
+ 
 .cert-field:last-of-type { border-bottom: none; }
-
+ 
 .cfl { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); font-weight: 400; }
 .cfv { color: var(--k); font-variant-numeric: tabular-nums; }
-
+ 
 .cert-doc-footer {
   margin-top: 28px;
   padding-top: 20px;
@@ -734,7 +649,7 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
-
+ 
 .cert-seal {
   width: 40px; height: 40px;
   border: 1px solid var(--rule);
@@ -745,14 +660,14 @@ nav {
   font-style: italic;
   color: var(--k);
 }
-
+ 
 .cert-auth-text {
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--mid);
 }
-
+ 
 /* ── RECEPTION SECTION ── */
 .reception {
   border-top: 1px solid var(--rule);
@@ -760,7 +675,7 @@ nav {
   background: var(--k);
   color: rgba(255,255,255,0.85);
 }
-
+ 
 .reception-inner {
   max-width: 1440px;
   margin: 0 auto;
@@ -769,7 +684,7 @@ nav {
   gap: 100px;
   align-items: center;
 }
-
+ 
 .rec-label {
   font-size: 0.6rem;
   letter-spacing: 0.28em;
@@ -779,7 +694,7 @@ nav {
   display: block;
   margin-bottom: 24px;
 }
-
+ 
 .rec-title {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
@@ -787,9 +702,9 @@ nav {
   margin-bottom: 32px;
   color: rgba(255,255,255,0.9);
 }
-
+ 
 .rec-title em { font-style: italic; }
-
+ 
 .rec-p {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.35);
@@ -797,14 +712,14 @@ nav {
   letter-spacing: 0.02em;
   margin-bottom: 14px;
 }
-
+ 
 .rec-items {
   display: flex;
   flex-direction: column;
   gap: 0;
   border-top: 1px solid rgba(255,255,255,0.07);
 }
-
+ 
 .rec-item {
   padding: 22px 0;
   border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -813,14 +728,14 @@ nav {
   gap: 20px;
   align-items: baseline;
 }
-
+ 
 .ri-num {
   font-size: 0.58rem;
   color: rgba(255,255,255,0.18);
   letter-spacing: 0.1em;
   font-weight: 400;
 }
-
+ 
 .ri-name {
   font-family: 'DM Serif Display', serif;
   font-size: 0.95rem;
@@ -828,14 +743,76 @@ nav {
   margin-bottom: 4px;
   font-style: italic;
 }
-
+ 
 .ri-desc {
   font-size: 0.7rem;
   color: rgba(255,255,255,0.28);
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
-
+ 
+/* ── NOT ── */
+.not-section {
+  border-top: 1px solid var(--rule);
+  padding: 80px 52px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+ 
+.not-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  padding-top: 4px;
+}
+ 
+.not-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+ 
+.not-item {
+  padding: 32px 36px;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+ 
+.not-item-no {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rule);
+  font-weight: 400;
+  margin-bottom: 8px;
+  display: block;
+}
+ 
+.not-item-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--mid);
+  margin-bottom: 6px;
+  text-decoration: line-through;
+  text-decoration-color: var(--rule);
+}
+ 
+.not-item-note {
+  font-size: 0.68rem;
+  color: var(--mid);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  opacity: 0.6;
+}
+ 
 /* ── GLOBAL ENQUIRY ── */
 .enquiry-section {
   border-top: 1px solid var(--rule);
@@ -844,7 +821,7 @@ nav {
   margin: 0 auto;
   text-align: center;
 }
-
+ 
 .enq-label {
   font-size: 0.6rem;
   letter-spacing: 0.28em;
@@ -854,7 +831,7 @@ nav {
   display: block;
   margin-bottom: 24px;
 }
-
+ 
 .enq-title {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2rem, 4vw, 3.4rem);
@@ -862,9 +839,9 @@ nav {
   color: var(--k);
   margin-bottom: 16px;
 }
-
+ 
 .enq-title em { font-style: italic; }
-
+ 
 .enq-sub {
   font-size: 0.78rem;
   color: var(--mid);
@@ -873,17 +850,17 @@ nav {
   max-width: 480px;
   margin: 0 auto 56px;
 }
-
+ 
 .enq-form {
   max-width: 560px;
   margin: 0 auto;
   text-align: left;
 }
-
+ 
 .enq-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-
+ 
 .enq-field { margin-bottom: 28px; }
-
+ 
 .enq-field-label {
   display: block;
   font-size: 0.58rem;
@@ -893,7 +870,7 @@ nav {
   font-weight: 400;
   margin-bottom: 10px;
 }
-
+ 
 .enq-input, .enq-select, .enq-textarea {
   width: 100%;
   background: transparent;
@@ -908,12 +885,12 @@ nav {
   transition: border-color 0.2s;
   letter-spacing: 0.02em;
 }
-
+ 
 .enq-input::placeholder, .enq-textarea::placeholder { color: var(--mid); }
 .enq-input:focus, .enq-select:focus, .enq-textarea:focus { border-bottom-color: var(--k); }
 .enq-select { appearance: none; cursor: pointer; }
 .enq-textarea { resize: none; min-height: 90px; padding-top: 12px; }
-
+ 
 .enq-submit {
   margin-top: 16px;
   background: var(--k);
@@ -928,9 +905,9 @@ nav {
   cursor: pointer;
   transition: opacity 0.2s;
 }
-
+ 
 .enq-submit:hover { opacity: 0.72; }
-
+ 
 .enq-note {
   margin-top: 20px;
   font-size: 0.62rem;
@@ -938,7 +915,7 @@ nav {
   letter-spacing: 0.06em;
   line-height: 1.7;
 }
-
+ 
 /* ── PRESS ── */
 .press-section {
   border-top: 1px solid var(--rule);
@@ -951,9 +928,9 @@ nav {
   gap: 40px;
   flex-wrap: wrap;
 }
-
+ 
 .press-left { max-width: 400px; }
-
+ 
 .press-label {
   font-size: 0.6rem;
   letter-spacing: 0.28em;
@@ -963,16 +940,16 @@ nav {
   display: block;
   margin-bottom: 12px;
 }
-
+ 
 .press-text {
   font-family: 'DM Serif Display', serif;
   font-size: 1.2rem;
   color: var(--k);
   line-height: 1.4;
 }
-
+ 
 .press-text em { font-style: italic; }
-
+ 
 .press-contact {
   font-size: 0.65rem;
   letter-spacing: 0.12em;
@@ -982,9 +959,9 @@ nav {
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
-
+ 
 .press-contact:hover { color: var(--k); border-color: var(--k); }
-
+ 
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--rule);
@@ -995,7 +972,7 @@ footer {
   flex-wrap: wrap;
   gap: 16px;
 }
-
+ 
 .foot-brand {
   font-family: 'DM Serif Display', serif;
   font-size: 0.9rem;
@@ -1003,19 +980,19 @@ footer {
   text-transform: uppercase;
   color: var(--k);
 }
-
+ 
 .foot-mid {
   font-size: 0.6rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mid);
 }
-
+ 
 .foot-links {
   display: flex;
   gap: 24px;
 }
-
+ 
 .foot-links a {
   font-size: 0.6rem;
   letter-spacing: 0.12em;
@@ -1023,50 +1000,320 @@ footer {
   text-decoration: none;
   transition: color 0.2s;
 }
-
+ 
 .foot-links a:hover { color: var(--k); }
-
+ 
+/* ── STONE DETAIL OVERLAY ── */
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--w);
+  z-index: 200;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+}
+ 
+.detail-overlay.open {
+  display: flex;
+  animation: overlayIn 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+ 
+@keyframes overlayIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+.detail-nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
+  padding: 0 52px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  flex-shrink: 0;
+}
+ 
+.detail-back {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  cursor: pointer;
+  transition: color 0.2s;
+  font-weight: 400;
+}
+ 
+.detail-back:hover { color: var(--k); }
+ 
+.detail-ref {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--mid);
+  font-variant-numeric: tabular-nums;
+}
+ 
+/* Two-zone layout: visual left (sticky), content right */
+.detail-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 60px);
+}
+ 
+.detail-visual {
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--off);
+  border-right: 1px solid var(--rule);
+  gap: 20px;
+  padding: 60px;
+}
+ 
+.detail-stone-display {
+  font-size: 14rem;
+  line-height: 1;
+  user-select: none;
+}
+ 
+.detail-photo-note {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--mid);
+  text-align: center;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+ 
+/* Right: scrollable content */
+.detail-content {
+  padding: 80px 72px 120px;
+  overflow-y: auto;
+}
+ 
+.dc-pre {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 16px;
+  display: block;
+  font-weight: 400;
+}
+ 
+.dc-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: 1.0;
+  color: var(--k);
+  margin-bottom: 8px;
+}
+ 
+.dc-origin {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+ 
+.dc-price-line {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+ 
+.dc-price {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--k);
+}
+ 
+.dc-price-note {
+  font-size: 0.65rem;
+  color: var(--mid);
+  letter-spacing: 0.08em;
+}
+ 
+.dc-story {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--k);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  opacity: 0.7;
+}
+ 
+.dc-desc {
+  font-size: 0.78rem;
+  color: var(--mid);
+  line-height: 2;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+}
+ 
+.dc-specs {
+  border-top: 1px solid var(--rule);
+  margin-bottom: 52px;
+}
+ 
+.dc-spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.72rem;
+}
+ 
+.dcs-label {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.58rem;
+  color: var(--mid);
+  font-weight: 400;
+}
+ 
+.dcs-value {
+  color: var(--k);
+  font-variant-numeric: tabular-nums;
+}
+ 
+.dc-enquiry {
+  border-top: 1px solid var(--rule);
+  padding-top: 48px;
+}
+ 
+.de-head {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: var(--k);
+  margin-bottom: 8px;
+}
+ 
+.de-sub {
+  font-size: 0.72rem;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  letter-spacing: 0.02em;
+}
+ 
+.de-field { margin-bottom: 20px; }
+ 
+.de-label {
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+ 
+.de-input, .de-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 0;
+  color: var(--k);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  letter-spacing: 0.02em;
+}
+ 
+.de-input::placeholder, .de-textarea::placeholder { color: var(--mid); }
+.de-input:focus, .de-textarea:focus { border-bottom-color: var(--k); }
+.de-textarea { resize: none; min-height: 80px; padding-top: 12px; }
+ 
+.de-submit {
+  margin-top: 32px;
+  background: var(--k);
+  color: var(--w);
+  border: none;
+  padding: 18px 44px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+ 
+.de-submit:hover { opacity: 0.72; }
+ 
+.de-note {
+  margin-top: 16px;
+  font-size: 0.6rem;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+ 
 /* ── CONFIRM ── */
 .confirm-screen {
   text-align: center;
   padding: 80px 40px;
   display: none;
 }
-
+ 
 .confirm-screen.show { display: block; }
-
+ 
 /* ── ANIMATIONS ── */
 @keyframes rise {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
+ 
 @keyframes pulse {
   0%,100% { transform: scaleY(1); opacity: 0.4; }
   50% { transform: scaleY(0.55); opacity: 0.9; }
 }
-
+ 
 .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
+ 
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
-
+.reveal-d3 { transition-delay: 0.3s; }
+ 
 /* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .stones-grid { grid-template-columns: repeat(2, 1fr); }
+}
+ 
 @media (max-width: 960px) {
   nav { padding: 0 24px; }
   .nav-links { display: none; }
   .collection { padding: 60px 24px 80px; }
-  .stone-row { grid-template-columns: 1fr; }
-  .sr-divider { display: none; }
-  .sr-location, .sr-main, .sr-right { padding: 20px 24px; }
-  .sr-right { align-items: flex-start; border-top: 1px solid var(--rule); }
-  .sr-cta { opacity: 1; }
+  .stones-grid { grid-template-columns: repeat(2, 1fr); }
   .cert-section { grid-template-columns: 1fr; gap: 52px; padding: 60px 24px; }
   .reception-inner { grid-template-columns: 1fr; gap: 52px; }
   .reception { padding: 60px 24px; }
@@ -1074,33 +1321,50 @@ footer {
   .press-section { padding: 48px 24px; }
   footer { padding: 28px 24px; }
   .about { padding: 80px 24px; }
-  .detail-body { grid-template-columns: 1fr; gap: 52px; padding: 40px 24px 80px; }
-  .detail-visual { position: static; }
-  .detail-stone-display { font-size: 8rem; }
+  .detail-body { grid-template-columns: 1fr; min-height: auto; }
+  .detail-visual { position: relative; top: 0; height: 340px; }
+  .detail-stone-display { font-size: 9rem; }
+  .detail-content { padding: 40px 24px 80px; }
   .detail-nav { padding: 0 24px; }
   .enq-row { grid-template-columns: 1fr; gap: 0; }
+  .manifesto-inner { grid-template-columns: 1fr; gap: 32px; padding: 60px 24px; }
+  .manifesto { padding: 0; }
+  .provenance { padding: 60px 24px; }
+  .prov-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+  .prov-chain { grid-template-columns: 1fr 1fr; }
+  .prov-step { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 0; }
+  .prov-step:last-child { border-bottom: none; }
+  .prov-step:not(:first-child) { padding-left: 0; }
+  .no-cart { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; }
+  .not-section { grid-template-columns: 1fr; gap: 24px; padding: 60px 24px; }
+  .not-grid { grid-template-columns: 1fr; }
 }
-
+ 
+@media (max-width: 600px) {
+  .stones-grid { grid-template-columns: 1fr; }
+}
+ 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--w); }
 ::-webkit-scrollbar-thumb { background: var(--rule); }
-
+ 
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Terra Rara</a>
   <ul class="nav-links">
     <li><a href="#collection">Collection</a></li>
+    <li><a href="#provenance">Provenance</a></li>
     <li><a href="#certificate">Certificate</a></li>
     <li><a href="#reception">Reception</a></li>
     <li><a href="#enquiry">Enquire</a></li>
   </ul>
   <a href="#enquiry" class="nav-enquire">Enquire</a>
 </nav>
-
+ 
 <!-- OPENING -->
 <section class="opening">
   <div class="opening-pre">Stones of the world — 2024</div>
@@ -1113,7 +1377,24 @@ footer {
     <div class="scroll-bar"></div>
   </div>
 </section>
-
+ 
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="manifesto-inner reveal">
+    <span class="manifesto-label">Terra Rara</span>
+    <div>
+      <p class="manifesto-quote">
+        The earth spent four billion years making these objects.
+        <strong>We spent months finding them.</strong>
+      </p>
+      <div class="manifesto-rule"></div>
+      <p class="manifesto-body">
+        A geological fragment collected from a precise point on the planet is unique in the absolute sense of the word. No reproduction is possible. No equivalent exists. It will exist only once, in the hands of one person. Terra Rara's work begins long before the object reaches you — and it never involves a warehouse, a catalogue, or an algorithm.
+      </p>
+    </div>
+  </div>
+</section>
+ 
 <!-- ABOUT -->
 <section class="about reveal">
   <p class="about-text">
@@ -1123,7 +1404,7 @@ footer {
   </p>
   <p class="about-sub">Terra Rara collects geological fragments from the world's most remote and significant sites. Every piece ships with its certificate of authenticity, its coordinates, and a full account of where it came from and why it matters.</p>
 </section>
-
+ 
 <!-- COLLECTION -->
 <section class="collection" id="collection">
   <div class="col-head reveal">
@@ -1131,12 +1412,57 @@ footer {
       <span class="col-label">Current collection</span>
       <h2 class="col-title">Available pieces</h2>
     </div>
-    <p class="col-note">Each piece is unique. Prices are communicated upon enquiry.</p>
+    <p class="col-note">Six pieces. Each unique. Price on enquiry.</p>
   </div>
-
-  <div class="stones-list" id="stonesList"></div>
+ 
+  <div class="stones-grid" id="stonesList"></div>
 </section>
-
+ 
+<!-- PROVENANCE -->
+<section class="provenance" id="provenance">
+  <div class="prov-head reveal">
+    <span class="prov-label">How we collect</span>
+    <div class="prov-intro">
+      <h2>The chain from <em>ground to hands</em> is ours.</h2>
+      <p>Every Terra Rara piece travels a single, unbroken chain from site to recipient. We do not buy in bulk. We do not source from secondary markets. Each piece is collected by the house or by a named partner collector working under direct mandate — and documented from the first moment of contact with the ground.</p>
+    </div>
+  </div>
+ 
+  <div class="prov-chain">
+    <div class="prov-step reveal">
+      <span class="prov-step-num">— Site</span>
+      <div class="prov-step-name">Field collection</div>
+      <p class="prov-step-desc">A single piece, collected at a specific site. GPS coordinates recorded to the arc-second. In-situ photograph taken before the stone is moved. Date, time, and conditions logged.</p>
+    </div>
+    <div class="prov-step reveal reveal-d1">
+      <span class="prov-step-num">— Study</span>
+      <div class="prov-step-name">Mineralogical analysis</div>
+      <p class="prov-step-desc">Each piece is described mineralogically — composition, structure, hardness, estimated age, and formation context. The language of geology, not decoration.</p>
+    </div>
+    <div class="prov-step reveal reveal-d2">
+      <span class="prov-step-num">— Record</span>
+      <div class="prov-step-name">Registry entry</div>
+      <p class="prov-step-desc">The piece receives a unique reference number and a permanent entry in the Terra Rara registry. A QR code engraved on the base links to this record for the life of the object.</p>
+    </div>
+    <div class="prov-step reveal reveal-d3">
+      <span class="prov-step-num">— Edition</span>
+      <div class="prov-step-name">One piece, one owner</div>
+      <p class="prov-step-desc">The piece is offered once. When it finds its owner, it leaves the collection permanently. It will not appear elsewhere. The registry records this transfer.</p>
+    </div>
+  </div>
+ 
+  <div class="no-cart reveal">
+    <p class="no-cart-text">
+      There is no checkout.<br>
+      There is no <strong>shopping cart.</strong>
+    </p>
+    <div class="no-cart-sub">
+      <p>Every acquisition begins with a conversation. You send an enquiry. A person reads it — the same day — and replies within 48 hours. We discuss the piece, the provenance, the shipping. Then, if it makes sense, it becomes yours.</p>
+      <p>This is not a technical constraint. It is a deliberate choice: objects of this nature require a human exchange. The transaction is part of what you receive.</p>
+    </div>
+  </div>
+</section>
+ 
 <!-- CERTIFICATE -->
 <section class="cert-section" id="certificate">
   <div class="cert-text reveal">
@@ -1165,7 +1491,7 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <!-- RECEPTION -->
 <section class="reception" id="reception">
   <div class="reception-inner">
@@ -1206,7 +1532,34 @@ footer {
     </div>
   </div>
 </section>
-
+ 
+<!-- WHAT WE ARE NOT -->
+<section class="not-section reveal">
+  <span class="not-label">What Terra Rara is not</span>
+  <div class="not-grid">
+    <div class="not-item">
+      <span class="not-item-no">Not this</span>
+      <div class="not-item-name">A minerals boutique</div>
+      <p class="not-item-note">Terra Rara does not sell crystals, specimens, or collectibles by weight or category. Every piece is singular.</p>
+    </div>
+    <div class="not-item">
+      <span class="not-item-no">Not this</span>
+      <div class="not-item-name">A wellness concept</div>
+      <p class="not-item-note">These are geological objects. Their value is scientific, geographic, and aesthetic — not therapeutic.</p>
+    </div>
+    <div class="not-item">
+      <span class="not-item-no">Not this</span>
+      <div class="not-item-name">A marketplace</div>
+      <p class="not-item-note">Each piece is selected, documented, and certified directly by the house. There are no third-party sellers.</p>
+    </div>
+    <div class="not-item">
+      <span class="not-item-no">Not this</span>
+      <div class="not-item-name">A museum shop</div>
+      <p class="not-item-note">Our references are The Row, Aesop, Loro Piana — not the souvenir counter. One thing, done well, without announcing it.</p>
+    </div>
+  </div>
+</section>
+ 
 <!-- GLOBAL ENQUIRY -->
 <section class="enquiry-section" id="enquiry">
   <div class="reveal">
@@ -1214,7 +1567,7 @@ footer {
     <h2 class="enq-title">Tell us which<br>piece <em>speaks to you.</em></h2>
     <p class="enq-sub">There is no checkout. We respond to every enquiry personally, usually within 48 hours. Shipping is worldwide, fully insured.</p>
   </div>
-
+ 
   <div class="enq-form reveal reveal-d1" id="enqFormWrap">
     <div class="enq-row">
       <div class="enq-field">
@@ -1243,14 +1596,14 @@ footer {
     <button class="enq-submit" onclick="submitEnquiry()">Send enquiry</button>
     <p class="enq-note">Your enquiry is read by a person, not a system. We do not share your details with third parties.</p>
   </div>
-
+ 
   <div class="confirm-screen" id="confirmScreen">
     <span class="enq-label">Received</span>
     <h2 class="enq-title" style="font-size:2rem">Thank you.</h2>
     <p class="enq-sub">We'll be in touch within 48 hours.</p>
   </div>
 </section>
-
+ 
 <!-- PRESS -->
 <section class="press-section reveal">
   <div class="press-left">
@@ -1259,7 +1612,7 @@ footer {
   </div>
   <a href="mailto:press@terrarara.com" class="press-contact">press@terrarara.com</a>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <span class="foot-brand">Terra Rara</span>
@@ -1270,7 +1623,7 @@ footer {
     <a href="#enquiry">Contact</a>
   </div>
 </footer>
-
+ 
 <!-- DETAIL OVERLAY -->
 <div class="detail-overlay" id="detailOverlay">
   <div class="detail-nav">
@@ -1285,7 +1638,7 @@ footer {
     <div class="detail-content" id="detailContent"></div>
   </div>
 </div>
-
+ 
 <script>
 const stones = [
   {
@@ -1298,9 +1651,10 @@ const stones = [
     age: '~12,000 years',
     weight: '287 g',
     date: '14 March 2024',
+    price: '$3,400',
     emoji: '🪨',
     sold: false,
-    story: 'The south coast of Iceland in early March. The black sand stretches flat to the horizon, and the Vatnajökull sits behind it like a pale wall. This stone came from a lava field three kilometres from the water's edge.',
+    story: 'The south coast of Iceland in early March. The black sand stretches flat to the horizon, and the Vatnajökull sits behind it like a pale wall. This stone came from a lava field three kilometres from the water\'s edge.',
     desc: 'An olivine basalt formed during the post-glacial volcanic period. The characteristic green olivine crystals indicate high-pressure formation deep within the mantle. Aphanitic texture, matte surface, exceptional structural integrity.',
     specs: { 'Mineralogy': 'Basalt · Olivine', 'Mohs hardness': '6 – 7', 'Dimensions': '11 × 8 × 4 cm', 'GPS': '63°52′N 18°04′W' }
   },
@@ -1314,6 +1668,7 @@ const stones = [
     age: '~300 million years',
     weight: '445 g',
     date: '2 June 2024',
+    price: '$4,800',
     emoji: '🌸',
     sold: false,
     story: 'The Côte de Granit Rose at low tide, the sea pulling back from boulders the colour of old salmon. This piece spent three hundred million years being shaped by the Atlantic. It shows.',
@@ -1330,6 +1685,7 @@ const stones = [
     age: '~80,000 years',
     weight: '162 g',
     date: '18 September 2024',
+    price: '$2,600',
     emoji: '⬛',
     sold: false,
     story: 'The Ethiopian Rift Valley in the dry season. The earth is ochre and cracked, and this stone was sitting in the open, drawing heat. Eighty thousand years old. It looked new.',
@@ -1346,6 +1702,7 @@ const stones = [
     age: '~500 million years',
     weight: '318 g',
     date: '27 January 2024',
+    price: '$5,200',
     emoji: '🤍',
     sold: true,
     story: 'Half a billion years of desert wind. The Namib is the oldest desert on earth, and this stone has been here for most of it. Translucent under direct light. Cool to the touch even in the heat.',
@@ -1362,6 +1719,7 @@ const stones = [
     age: '~40 million years',
     weight: '203 g',
     date: '7 July 2024',
+    price: '$3,900',
     emoji: '✨',
     sold: false,
     story: 'Above 2,000 metres on the French side of the Alps, where the melt water runs clear and the rock beneath the ice is still being uncovered. This schist has been waiting forty million years.',
@@ -1378,6 +1736,7 @@ const stones = [
     age: '~25 million years',
     weight: '521 g',
     date: '11 May 2024',
+    price: '$6,700',
     emoji: '🪸',
     sold: false,
     story: 'Gozo in May, the sea impossibly blue. This limestone formed in a tropical lagoon that no longer exists — built from the accumulated shells of foraminifera over millions of years. The colour is honey in sunlight.',
@@ -1385,8 +1744,7 @@ const stones = [
     specs: { 'Mineralogy': 'Bioclastic limestone', 'Mohs hardness': '3 – 4', 'Dimensions': '15 × 11 × 9 cm', 'GPS': '36°01′N 14°14′E' }
   }
 ];
-
-// Populate enquiry select
+ 
 const sel = document.getElementById('enqPiece');
 stones.filter(s => !s.sold).forEach(s => {
   const o = document.createElement('option');
@@ -1398,58 +1756,53 @@ const other = document.createElement('option');
 other.value = 'other';
 other.textContent = 'General enquiry / upcoming collections';
 sel.appendChild(other);
-
-// Render list
+ 
 function renderList() {
-  const list = document.getElementById('stonesList');
-  list.innerHTML = stones.map((s, i) => `
-    <div class="stone-row${s.sold ? ' sold' : ''}"
-         style="opacity:0;transition:opacity .6s ease ${i*0.08}s"
+  const grid = document.getElementById('stonesList');
+  grid.innerHTML = stones.map((s, i) => `
+    <div class="stone-card${s.sold ? ' sold' : ''}"
+         style="opacity:0;transition:opacity .5s ease ${i*0.07}s"
          onclick="${s.sold ? '' : `openDetail('${s.id}')`}">
-      <div class="sr-location">
-        <span class="sr-loc-country">${s.type} · ${s.location}</span>
-        <div class="sr-loc-name">${s.site}</div>
-        <div class="sr-loc-coords">${s.coords}</div>
+      <div class="sc-visual">
+        ${s.sold ? '<div class="sc-sold-banner">Sold</div>' : ''}
+        ${s.emoji}
       </div>
-      <div class="sr-divider"></div>
-      <div class="sr-main">
-        <div class="sr-thumb">${s.emoji}</div>
-        <div class="sr-info">
-          <div class="sr-name">${s.name}</div>
-          <div class="sr-desc">${s.story.substring(0, 110)}…</div>
+      <div class="sc-body">
+        <span class="sc-type">${s.type} · ${s.age}</span>
+        <div class="sc-name">${s.name}</div>
+        <div class="sc-origin">${s.site}<br>${s.location}</div>
+        <div class="sc-footer">
+          <div>
+            <div class="sc-price">${s.sold ? '—' : s.price}</div>
+            <span class="sc-price-note">${s.sold ? 'Sold' : 'Price on enquiry'}</span>
+          </div>
+          ${!s.sold ? `<span class="sc-cta">View piece</span>` : ''}
         </div>
-      </div>
-      <div class="sr-divider"></div>
-      <div class="sr-right">
-        <span class="sr-age">${s.age}</span>
-        ${s.sold
-          ? `<span class="sr-sold-tag">Sold</span>`
-          : `<span class="sr-cta">View piece</span>`
-        }
       </div>
     </div>
   `).join('');
-
+ 
   requestAnimationFrame(() => {
-    list.querySelectorAll('.stone-row').forEach(el => el.style.opacity = '1');
+    grid.querySelectorAll('.stone-card').forEach(el => el.style.opacity = '1');
   });
 }
-
-// Detail overlay
+ 
 function openDetail(id) {
   const s = stones.find(x => x.id === id);
   if (!s) return;
-
+ 
   document.getElementById('detailRef').textContent = s.id;
   document.getElementById('detailEmoji').textContent = s.emoji;
-
-  // Pre-select in enquiry form
   document.getElementById('enqPiece').value = s.id;
-
+ 
   document.getElementById('detailContent').innerHTML = `
     <span class="dc-pre">${s.type} · ${s.location}</span>
     <h2 class="dc-name">${s.name}</h2>
     <p class="dc-origin">${s.site} &nbsp;·&nbsp; ${s.coords}</p>
+    <div class="dc-price-line">
+      <span class="dc-price">${s.price}</span>
+      <span class="dc-price-note">Price on enquiry · No payment at this stage</span>
+    </div>
     <p class="dc-story">${s.story}</p>
     <p class="dc-desc">${s.desc}</p>
     <div class="dc-specs">
@@ -1458,6 +1811,7 @@ function openDetail(id) {
       ).join('')}
       <div class="dc-spec"><span class="dcs-label">Collected</span><span class="dcs-value">${s.date}</span></div>
       <div class="dc-spec"><span class="dcs-label">Weight</span><span class="dcs-value">${s.weight}</span></div>
+      <div class="dc-spec"><span class="dcs-label">Age</span><span class="dcs-value">${s.age}</span></div>
     </div>
     <div class="dc-enquiry">
       <h3 class="de-head">Enquire about this piece</h3>
@@ -1478,16 +1832,16 @@ function openDetail(id) {
       <p class="de-note">Read by a person. Responded to within 48 hours. Your details are never shared.</p>
     </div>
   `;
-
+ 
   document.getElementById('detailOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
+ 
 function closeDetail() {
   document.getElementById('detailOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-
+ 
 function submitDetailEnquiry(id, name) {
   const email = document.getElementById('deEmail').value;
   const dname = document.getElementById('deName').value;
@@ -1500,8 +1854,7 @@ function submitDetailEnquiry(id, name) {
   document.getElementById('confirmScreen').classList.add('show');
   document.getElementById('enquiry').scrollIntoView({ behavior: 'smooth' });
 }
-
-// Global enquiry
+ 
 function submitEnquiry() {
   const email = document.getElementById('enqEmail').value;
   const first = document.getElementById('enqFirst').value;
@@ -1512,19 +1865,18 @@ function submitEnquiry() {
   document.getElementById('enqFormWrap').style.display = 'none';
   document.getElementById('confirmScreen').classList.add('show');
 }
-
-// Keyboard
+ 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeDetail();
 });
-
-// Scroll reveal
+ 
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
+ 
 renderList();
 </script>
 </body>
 </html>
+ 
