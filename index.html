@@ -187,7 +187,7 @@ nav {
   font-size: 0.58rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.45);
   font-weight: 400;
   padding-top: 6px;
 }
@@ -196,60 +196,28 @@ nav {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(1.6rem, 2.8vw, 2.6rem);
   line-height: 1.45;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.95);
   font-style: italic;
 }
  
 .manifesto-quote strong {
   font-style: normal;
-  color: rgba(255,255,255,0.95);
+  color: #ffffff;
 }
  
 .manifesto-rule {
   width: 32px;
   height: 1px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   margin: 32px 0;
 }
  
 .manifesto-body {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.3);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
   line-height: 2;
   letter-spacing: 0.02em;
   max-width: 480px;
-}
- 
-/* ── ABOUT ── */
-.about {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 120px 52px;
-  text-align: center;
-}
- 
-.about-text {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
-  line-height: 1.55;
-  color: var(--k);
-  font-style: italic;
-}
- 
-.about-text strong {
-  font-style: normal;
-  color: var(--k);
-}
- 
-.about-sub {
-  margin-top: 36px;
-  font-size: 0.78rem;
-  color: var(--mid);
-  line-height: 2;
-  letter-spacing: 0.03em;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
 }
  
 /* ── COLLECTION ── */
@@ -421,97 +389,7 @@ nav {
   color: var(--mid);
 }
  
-/* ── PROVENANCE ── */
-.provenance {
-  border-top: 1px solid var(--rule);
-  padding: 100px 52px;
-  max-width: 1440px;
-  margin: 0 auto;
-}
- 
-.prov-head {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
-  align-items: start;
-  margin-bottom: 72px;
-}
- 
-.prov-label {
-  font-size: 0.58rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--mid);
-  font-weight: 400;
-  padding-top: 4px;
-}
- 
-.prov-intro h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  line-height: 1.1;
-  color: var(--k);
-  margin-bottom: 20px;
-}
- 
-.prov-intro h2 em { font-style: italic; }
- 
-.prov-intro p {
-  font-size: 0.78rem;
-  color: var(--mid);
-  line-height: 2;
-  letter-spacing: 0.02em;
-  max-width: 520px;
-}
- 
-/* Chain of custody — horizontal steps */
-.prov-chain {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--rule);
-}
- 
-.prov-step {
-  padding: 40px 36px 40px 0;
-  border-right: 1px solid var(--rule);
-  position: relative;
-}
- 
-.prov-step:last-child {
-  border-right: none;
-  padding-right: 0;
-}
- 
-.prov-step:not(:first-child) {
-  padding-left: 36px;
-}
- 
-.prov-step-num {
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mid);
-  font-weight: 400;
-  margin-bottom: 20px;
-  display: block;
-}
- 
-.prov-step-name {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.1rem;
-  color: var(--k);
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
- 
-.prov-step-desc {
-  font-size: 0.7rem;
-  color: var(--mid);
-  line-height: 1.8;
-  letter-spacing: 0.02em;
-}
- 
-/* Anti-marketplace statement */
+/* ── NO-CART ── */
 .no-cart {
   margin-top: 72px;
   border: 1px solid var(--rule);
@@ -689,7 +567,7 @@ nav {
   font-size: 0.6rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.45);
   font-weight: 400;
   display: block;
   margin-bottom: 24px;
@@ -700,14 +578,14 @@ nav {
   font-size: clamp(2rem, 3.5vw, 3rem);
   line-height: 1.1;
   margin-bottom: 32px;
-  color: rgba(255,255,255,0.9);
+  color: #ffffff;
 }
  
 .rec-title em { font-style: italic; }
  
 .rec-p {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
   line-height: 2;
   letter-spacing: 0.02em;
   margin-bottom: 14px;
@@ -717,12 +595,12 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255,255,255,0.12);
 }
  
 .rec-item {
   padding: 22px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   display: grid;
   grid-template-columns: 32px 1fr;
   gap: 20px;
@@ -731,7 +609,7 @@ nav {
  
 .ri-num {
   font-size: 0.58rem;
-  color: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.3);
   letter-spacing: 0.1em;
   font-weight: 400;
 }
@@ -739,14 +617,14 @@ nav {
 .ri-name {
   font-family: 'DM Serif Display', serif;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.9);
   margin-bottom: 4px;
   font-style: italic;
 }
  
 .ri-desc {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.28);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
@@ -1061,7 +939,6 @@ footer {
   font-variant-numeric: tabular-nums;
 }
  
-/* Two-zone layout: visual left (sticky), content right */
 .detail-body {
   flex: 1;
   display: grid;
@@ -1098,7 +975,6 @@ footer {
   text-transform: uppercase;
 }
  
-/* Right: scrollable content */
 .detail-content {
   padding: 80px 72px 120px;
   overflow-y: auto;
@@ -1320,7 +1196,6 @@ footer {
   .enquiry-section { padding: 60px 24px; }
   .press-section { padding: 48px 24px; }
   footer { padding: 28px 24px; }
-  .about { padding: 80px 24px; }
   .detail-body { grid-template-columns: 1fr; min-height: auto; }
   .detail-visual { position: relative; top: 0; height: 340px; }
   .detail-stone-display { font-size: 9rem; }
@@ -1329,12 +1204,6 @@ footer {
   .enq-row { grid-template-columns: 1fr; gap: 0; }
   .manifesto-inner { grid-template-columns: 1fr; gap: 32px; padding: 60px 24px; }
   .manifesto { padding: 0; }
-  .provenance { padding: 60px 24px; }
-  .prov-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
-  .prov-chain { grid-template-columns: 1fr 1fr; }
-  .prov-step { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 0; }
-  .prov-step:last-child { border-bottom: none; }
-  .prov-step:not(:first-child) { padding-left: 0; }
   .no-cart { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; }
   .not-section { grid-template-columns: 1fr; gap: 24px; padding: 60px 24px; }
   .not-grid { grid-template-columns: 1fr; }
@@ -1357,7 +1226,6 @@ footer {
   <a href="#" class="nav-logo">Terra Rara</a>
   <ul class="nav-links">
     <li><a href="#collection">Collection</a></li>
-    <li><a href="#provenance">Provenance</a></li>
     <li><a href="#certificate">Certificate</a></li>
     <li><a href="#reception">Reception</a></li>
     <li><a href="#enquiry">Enquire</a></li>
@@ -1395,16 +1263,6 @@ footer {
   </div>
 </section>
  
-<!-- ABOUT -->
-<section class="about reveal">
-  <p class="about-text">
-    Nature spent millions of years making these. <strong>We spent weeks finding them.</strong>
-    A volcano, a retreating glacier, a desert wind — each stone carries the memory
-    of a place most people will never go.
-  </p>
-  <p class="about-sub">Terra Rara collects geological fragments from the world's most remote and significant sites. Every piece ships with its certificate of authenticity, its coordinates, and a full account of where it came from and why it matters.</p>
-</section>
- 
 <!-- COLLECTION -->
 <section class="collection" id="collection">
   <div class="col-head reveal">
@@ -1412,45 +1270,11 @@ footer {
       <span class="col-label">Current collection</span>
       <h2 class="col-title">Available pieces</h2>
     </div>
-    <p class="col-note">Six pieces. Each unique. Price on enquiry.</p>
+    <p class="col-note">Four pieces. Each unique. Price on enquiry.</p>
   </div>
  
   <div class="stones-grid" id="stonesList"></div>
-</section>
- 
-<!-- PROVENANCE -->
-<section class="provenance" id="provenance">
-  <div class="prov-head reveal">
-    <span class="prov-label">How we collect</span>
-    <div class="prov-intro">
-      <h2>The chain from <em>ground to hands</em> is ours.</h2>
-      <p>Every Terra Rara piece travels a single, unbroken chain from site to recipient. We do not buy in bulk. We do not source from secondary markets. Each piece is collected by the house or by a named partner collector working under direct mandate — and documented from the first moment of contact with the ground.</p>
-    </div>
-  </div>
- 
-  <div class="prov-chain">
-    <div class="prov-step reveal">
-      <span class="prov-step-num">— Site</span>
-      <div class="prov-step-name">Field collection</div>
-      <p class="prov-step-desc">A single piece, collected at a specific site. GPS coordinates recorded to the arc-second. In-situ photograph taken before the stone is moved. Date, time, and conditions logged.</p>
-    </div>
-    <div class="prov-step reveal reveal-d1">
-      <span class="prov-step-num">— Study</span>
-      <div class="prov-step-name">Mineralogical analysis</div>
-      <p class="prov-step-desc">Each piece is described mineralogically — composition, structure, hardness, estimated age, and formation context. The language of geology, not decoration.</p>
-    </div>
-    <div class="prov-step reveal reveal-d2">
-      <span class="prov-step-num">— Record</span>
-      <div class="prov-step-name">Registry entry</div>
-      <p class="prov-step-desc">The piece receives a unique reference number and a permanent entry in the Terra Rara registry. A QR code engraved on the base links to this record for the life of the object.</p>
-    </div>
-    <div class="prov-step reveal reveal-d3">
-      <span class="prov-step-num">— Edition</span>
-      <div class="prov-step-name">One piece, one owner</div>
-      <p class="prov-step-desc">The piece is offered once. When it finds its owner, it leaves the collection permanently. It will not appear elsewhere. The registry records this transfer.</p>
-    </div>
-  </div>
- 
+
   <div class="no-cart reveal">
     <p class="no-cart-text">
       There is no checkout.<br>
@@ -1693,23 +1517,6 @@ const stones = [
     specs: { 'Mineralogy': 'Volcanic glass', 'Mohs hardness': '5 – 5.5', 'Dimensions': '9 × 6 × 3 cm', 'GPS': '8°24′N 38°57′E' }
   },
   {
-    id: 'TR-2024-022',
-    name: 'White Quartzite',
-    location: 'Namibia',
-    site: 'Namib Desert',
-    coords: '24°17′S — 15°30′E',
-    type: 'Desert',
-    age: '~500 million years',
-    weight: '318 g',
-    date: '27 January 2024',
-    price: '$5,200',
-    emoji: '🤍',
-    sold: true,
-    story: 'Half a billion years of desert wind. The Namib is the oldest desert on earth, and this stone has been here for most of it. Translucent under direct light. Cool to the touch even in the heat.',
-    desc: 'Metamorphic quartzite polished by Namib winds over geological time. Translucent under direct light. Unusually cool tactile temperature. Surfaces smooth as marble.',
-    specs: { 'Mineralogy': 'Quartzite', 'Mohs hardness': '7 – 8', 'Dimensions': '10 × 9 × 6 cm', 'GPS': '24°17′S 15°30′E' }
-  },
-  {
     id: 'TR-2024-071',
     name: 'Alpine Schist',
     location: 'France / Switzerland',
@@ -1725,23 +1532,6 @@ const stones = [
     story: 'Above 2,000 metres on the French side of the Alps, where the melt water runs clear and the rock beneath the ice is still being uncovered. This schist has been waiting forty million years.',
     desc: 'Glaucophane-bearing schist formed during Alpine subduction. The micaceous layers catch light at every angle with a silken lustre. Glacial striations visible on two faces — a record of the ice that once moved over it.',
     specs: { 'Mineralogy': 'Schist · Glaucophane', 'Mohs hardness': '5.5 – 6', 'Dimensions': '8 × 6 × 2 cm', 'GPS': '45°55′N 6°52′E' }
-  },
-  {
-    id: 'TR-2024-039',
-    name: 'Coral Limestone',
-    location: 'Malta',
-    site: 'Gozo Island',
-    coords: '36°01′N — 14°14′E',
-    type: 'Marine',
-    age: '~25 million years',
-    weight: '521 g',
-    date: '11 May 2024',
-    price: '$6,700',
-    emoji: '🪸',
-    sold: false,
-    story: 'Gozo in May, the sea impossibly blue. This limestone formed in a tropical lagoon that no longer exists — built from the accumulated shells of foraminifera over millions of years. The colour is honey in sunlight.',
-    desc: 'Globigerinite limestone formed from foraminiferal accumulation in a vanished tropical lagoon. Fossil coral impressions visible to the naked eye. Characteristic honey colouration, warm tactile quality.',
-    specs: { 'Mineralogy': 'Bioclastic limestone', 'Mohs hardness': '3 – 4', 'Dimensions': '15 × 11 × 9 cm', 'GPS': '36°01′N 14°14′E' }
   }
 ];
  
@@ -1879,4 +1669,3 @@ renderList();
 </script>
 </body>
 </html>
- 
