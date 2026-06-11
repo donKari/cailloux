@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terra Rara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --w: #FFFFFF;
+  --off: #F8F8F6;
+  --k: #0E0E0D;
+  --mid: #999896;
+  --rule: #E6E6E3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--w);
+  color: var(--k);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 90;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.4s;
+}
+
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--k);
+  text-decoration: none;
+}
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--k); }
+
+.nav-enquire {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k);
+  text-decoration: none;
+  font-weight: 400;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--k);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-enquire:hover { color: var(--mid); border-color: var(--mid); }
+
+/* ── OPENING ── */
+.opening {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.opening-pre {
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: rise 1.1s ease forwards 0.5s;
+}
+
+.opening-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(3.6rem, 8vw, 8rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--k);
+  opacity: 0;
+  animation: rise 1.3s ease forwards 0.7s;
+}
+
+.opening-title em {
+  font-style: italic;
+  color: var(--mid);
+}
+
+.opening-line {
+  margin-top: 36px;
+  font-size: 0.8rem;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  max-width: 360px;
+  opacity: 0;
+  animation: rise 1.3s ease forwards 0.9s;
+}
+
+.opening-scroll {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: rise 1s ease forwards 1.4s;
+}
+
+.scroll-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.scroll-bar {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--rule), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── ABOUT ── */
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 120px 52px;
+  text-align: center;
+}
+
+.about-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  line-height: 1.55;
+  color: var(--k);
+  font-style: italic;
+}
+
+.about-text strong {
+  font-style: normal;
+  color: var(--k);
+}
+
+.about-sub {
+  margin-top: 36px;
+  font-size: 0.78rem;
+  color: var(--mid);
+  line-height: 2;
+  letter-spacing: 0.03em;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── COLLECTION ── */
+.collection {
+  border-top: 1px solid var(--rule);
+  padding: 80px 52px 120px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.col-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 64px;
+}
+
+.col-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+}
+
+.col-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  color: var(--k);
+}
+
+.col-note {
+  font-size: 0.68rem;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  max-width: 240px;
+  text-align: right;
+  line-height: 1.7;
+}
+
+/* Stone list — editorial rows, not grid */
+.stones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stone-row {
+  display: grid;
+  grid-template-columns: 1fr 2px 2fr 2px 1fr;
+  align-items: stretch;
+  cursor: pointer;
+  background: var(--w);
+  transition: background 0.3s;
+  border: 1px solid var(--rule);
+  border-bottom: none;
+}
+
+.stone-row:last-child { border-bottom: 1px solid var(--rule); }
+
+.stone-row:hover { background: var(--off); }
+
+.stone-row.sold { opacity: 0.45; cursor: default; }
+
+.sr-divider { background: var(--rule); }
+
+.sr-location {
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.sr-loc-country {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+}
+
+.sr-loc-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  color: var(--k);
+  line-height: 1.2;
+}
+
+.sr-loc-coords {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--mid);
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 4px;
+}
+
+.sr-main {
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.sr-thumb {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  background: var(--off);
+  transition: background 0.3s;
+}
+
+.stone-row:hover .sr-thumb { background: var(--rule); }
+
+.sr-info { flex: 1; }
+
+.sr-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: var(--k);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.sr-desc {
+  font-size: 0.72rem;
+  color: var(--mid);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.sr-right {
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.sr-age {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-align: right;
+}
+
+.sr-cta {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--k);
+  font-weight: 400;
+  border-bottom: 1px solid var(--k);
+  padding-bottom: 1px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.stone-row:hover .sr-cta { opacity: 1; }
+
+.sr-sold-tag {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+/* ── STONE DETAIL (full-screen overlay) ── */
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--k);
+  z-index: 200;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.detail-overlay.open {
+  display: flex;
+  animation: overlayIn 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.detail-nav {
+  position: sticky;
+  top: 0;
+  background: var(--k);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 52px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.detail-back {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: color 0.2s;
+  font-weight: 400;
+}
+
+.detail-back:hover { color: rgba(255,255,255,0.85); }
+
+.detail-ref {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.25);
+  font-variant-numeric: tabular-nums;
+}
+
+.detail-body {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 80px 52px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.detail-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+.detail-stone-display {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.detail-photo-note {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.detail-content { color: rgba(255,255,255,0.9); }
+
+.dc-pre {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+  display: block;
+  font-weight: 400;
+}
+
+.dc-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 8px;
+}
+
+.dc-origin {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.dc-story {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.dc-desc {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 2;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+}
+
+/* Specs table on dark bg */
+.dc-specs {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 52px;
+}
+
+.dc-spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.72rem;
+}
+
+.dcs-label {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.25);
+  font-weight: 400;
+}
+
+.dcs-value {
+  color: rgba(255,255,255,0.7);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Enquiry form inside detail */
+.dc-enquiry {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 48px;
+}
+
+.de-head {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 8px;
+}
+
+.de-sub {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  letter-spacing: 0.02em;
+}
+
+.de-field {
+  margin-bottom: 20px;
+}
+
+.de-label {
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.de-input, .de-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 0;
+  color: rgba(255,255,255,0.85);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.de-input::placeholder, .de-textarea::placeholder {
+  color: rgba(255,255,255,0.15);
+}
+
+.de-input:focus, .de-textarea:focus {
+  border-bottom-color: rgba(255,255,255,0.4);
+}
+
+.de-textarea { resize: none; min-height: 80px; padding-top: 12px; }
+
+.de-submit {
+  margin-top: 32px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  padding: 16px 36px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.de-submit:hover {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.95);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.de-note {
+  margin-top: 16px;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
+/* ── CERTIFICATE SECTION ── */
+.cert-section {
+  border-top: 1px solid var(--rule);
+  padding: 100px 52px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.cert-text .label {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.cert-text h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--k);
+}
+
+.cert-text h2 em { font-style: italic; }
+
+.cert-text p {
+  font-size: 0.78rem;
+  color: var(--mid);
+  line-height: 2;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+  max-width: 420px;
+}
+
+.cert-doc {
+  border: 1px solid var(--rule);
+  padding: 44px;
+  background: var(--off);
+  position: relative;
+}
+
+.cert-doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cert-doc-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--k);
+}
+
+.cert-doc-type {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.cert-doc-num {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  color: var(--mid);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cert-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.72rem;
+}
+
+.cert-field:last-of-type { border-bottom: none; }
+
+.cfl { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); font-weight: 400; }
+.cfv { color: var(--k); font-variant-numeric: tabular-nums; }
+
+.cert-doc-footer {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cert-seal {
+  width: 40px; height: 40px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--k);
+}
+
+.cert-auth-text {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+/* ── RECEPTION SECTION ── */
+.reception {
+  border-top: 1px solid var(--rule);
+  padding: 100px 52px;
+  background: var(--k);
+  color: rgba(255,255,255,0.85);
+}
+
+.reception-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.rec-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.rec-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 32px;
+  color: rgba(255,255,255,0.9);
+}
+
+.rec-title em { font-style: italic; }
+
+.rec-p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 2;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.rec-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.rec-item {
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.ri-num {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+.ri-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.ri-desc {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.28);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* ── GLOBAL ENQUIRY ── */
+.enquiry-section {
+  border-top: 1px solid var(--rule);
+  padding: 100px 52px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.enq-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.enq-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  color: var(--k);
+  margin-bottom: 16px;
+}
+
+.enq-title em { font-style: italic; }
+
+.enq-sub {
+  font-size: 0.78rem;
+  color: var(--mid);
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+  max-width: 480px;
+  margin: 0 auto 56px;
+}
+
+.enq-form {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.enq-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+.enq-field { margin-bottom: 28px; }
+
+.enq-field-label {
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.enq-input, .enq-select, .enq-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 0;
+  color: var(--k);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.enq-input::placeholder, .enq-textarea::placeholder { color: var(--mid); }
+.enq-input:focus, .enq-select:focus, .enq-textarea:focus { border-bottom-color: var(--k); }
+.enq-select { appearance: none; cursor: pointer; }
+.enq-textarea { resize: none; min-height: 90px; padding-top: 12px; }
+
+.enq-submit {
+  margin-top: 16px;
+  background: var(--k);
+  color: var(--w);
+  border: none;
+  padding: 18px 52px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.enq-submit:hover { opacity: 0.72; }
+
+.enq-note {
+  margin-top: 20px;
+  font-size: 0.62rem;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+}
+
+/* ── PRESS ── */
+.press-section {
+  border-top: 1px solid var(--rule);
+  padding: 64px 52px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.press-left { max-width: 400px; }
+
+.press-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.press-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--k);
+  line-height: 1.4;
+}
+
+.press-text em { font-style: italic; }
+
+.press-contact {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.press-contact:hover { color: var(--k); border-color: var(--k); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 40px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.foot-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--k);
+}
+
+.foot-mid {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.foot-links {
+  display: flex;
+  gap: 24px;
+}
+
+.foot-links a {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.foot-links a:hover { color: var(--k); }
+
+/* ── CONFIRM ── */
+.confirm-screen {
+  text-align: center;
+  padding: 80px 40px;
+  display: none;
+}
+
+.confirm-screen.show { display: block; }
+
+/* ── ANIMATIONS ── */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%,100% { transform: scaleY(1); opacity: 0.4; }
+  50% { transform: scaleY(0.55); opacity: 0.9; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .collection { padding: 60px 24px 80px; }
+  .stone-row { grid-template-columns: 1fr; }
+  .sr-divider { display: none; }
+  .sr-location, .sr-main, .sr-right { padding: 20px 24px; }
+  .sr-right { align-items: flex-start; border-top: 1px solid var(--rule); }
+  .sr-cta { opacity: 1; }
+  .cert-section { grid-template-columns: 1fr; gap: 52px; padding: 60px 24px; }
+  .reception-inner { grid-template-columns: 1fr; gap: 52px; }
+  .reception { padding: 60px 24px; }
+  .enquiry-section { padding: 60px 24px; }
+  .press-section { padding: 48px 24px; }
+  footer { padding: 28px 24px; }
+  .about { padding: 80px 24px; }
+  .detail-body { grid-template-columns: 1fr; gap: 52px; padding: 40px 24px 80px; }
+  .detail-visual { position: static; }
+  .detail-stone-display { font-size: 8rem; }
+  .detail-nav { padding: 0 24px; }
+  .enq-row { grid-template-columns: 1fr; gap: 0; }
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--w); }
+::-webkit-scrollbar-thumb { background: var(--rule); }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Terra Rara</a>
+  <ul class="nav-links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#certificate">Certificate</a></li>
+    <li><a href="#reception">Reception</a></li>
+    <li><a href="#enquiry">Enquire</a></li>
+  </ul>
+  <a href="#enquiry" class="nav-enquire">Enquire</a>
+</nav>
+
+<!-- OPENING -->
+<section class="opening">
+  <div class="opening-pre">Stones of the world — 2024</div>
+  <h1 class="opening-title">
+    Every stone<br>has <em>an address.</em>
+  </h1>
+  <p class="opening-line">Geological fragments collected across the world. Each one certified, located to the metre, and entirely unique.</p>
+  <div class="opening-scroll">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about reveal">
+  <p class="about-text">
+    Nature spent millions of years making these. <strong>We spent weeks finding them.</strong>
+    A volcano, a retreating glacier, a desert wind — each stone carries the memory
+    of a place most people will never go.
+  </p>
+  <p class="about-sub">Terra Rara collects geological fragments from the world's most remote and significant sites. Every piece ships with its certificate of authenticity, its coordinates, and a full account of where it came from and why it matters.</p>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+  <div class="col-head reveal">
+    <div>
+      <span class="col-label">Current collection</span>
+      <h2 class="col-title">Available pieces</h2>
+    </div>
+    <p class="col-note">Each piece is unique. Prices are communicated upon enquiry.</p>
+  </div>
+
+  <div class="stones-list" id="stonesList"></div>
+</section>
+
+<!-- CERTIFICATE -->
+<section class="cert-section" id="certificate">
+  <div class="cert-text reveal">
+    <span class="label">Our commitment</span>
+    <h2>A stone without<br>a story is just <em>a rock.</em></h2>
+    <p>Every piece we collect receives a numbered certificate of authenticity. GPS coordinates to the metre, exact time and date of collection, in-situ and studio photographs, and a full mineralogical description.</p>
+    <p>A QR code engraved on the display base links permanently to the piece's entry in our registry — accessible for life.</p>
+  </div>
+  <div class="cert-doc reveal reveal-d1">
+    <div class="cert-doc-header">
+      <div>
+        <div class="cert-doc-brand">Terra Rara</div>
+        <div class="cert-doc-type">Certificate of Authenticity</div>
+      </div>
+      <div class="cert-doc-num">No. TR-2024-047</div>
+    </div>
+    <div class="cert-field"><span class="cfl">Species</span><span class="cfv">Olivine Basalt</span></div>
+    <div class="cert-field"><span class="cfl">Origin</span><span class="cfv">Iceland, South Coast</span></div>
+    <div class="cert-field"><span class="cfl">Coordinates</span><span class="cfv">63°52′N — 18°04′W</span></div>
+    <div class="cert-field"><span class="cfl">Estimated age</span><span class="cfv">~12,000 years</span></div>
+    <div class="cert-field"><span class="cfl">Collected</span><span class="cfv">14 March 2024, 09:17</span></div>
+    <div class="cert-field"><span class="cfl">Weight</span><span class="cfv">287 g</span></div>
+    <div class="cert-doc-footer">
+      <div class="cert-auth-text">One piece · Authenticated</div>
+      <div class="cert-seal">TR</div>
+    </div>
+  </div>
+</section>
+
+<!-- RECEPTION -->
+<section class="reception" id="reception">
+  <div class="reception-inner">
+    <div class="reveal">
+      <span class="rec-label">The object you receive</span>
+      <h2 class="rec-title">The stone is only<br>part of <em>it.</em></h2>
+      <p class="rec-p">We believe the experience of receiving a Terra Rara piece should match what it contains. Every detail of the packaging has been considered to reflect the weight of what's inside.</p>
+    </div>
+    <div class="rec-items reveal reveal-d1">
+      <div class="rec-item">
+        <span class="ri-num">i</span>
+        <div>
+          <div class="ri-name">The stone</div>
+          <div class="ri-desc">Resting on a hand-turned light ash wood base, engraved with its reference number and QR code.</div>
+        </div>
+      </div>
+      <div class="rec-item">
+        <span class="ri-num">ii</span>
+        <div>
+          <div class="ri-name">The certificate</div>
+          <div class="ri-desc">Printed on cotton paper, folded once, sealed with a wax stamp. Signed by hand.</div>
+        </div>
+      </div>
+      <div class="rec-item">
+        <span class="ri-num">iii</span>
+        <div>
+          <div class="ri-name">The photograph</div>
+          <div class="ri-desc">A giclée print of the collection site. The exact spot. The exact light of that day.</div>
+        </div>
+      </div>
+      <div class="rec-item">
+        <span class="ri-num">iv</span>
+        <div>
+          <div class="ri-name">The box</div>
+          <div class="ri-desc">Unbleached linen casing, debossed with the Terra Rara mark. No plastic anywhere.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL ENQUIRY -->
+<section class="enquiry-section" id="enquiry">
+  <div class="reveal">
+    <span class="enq-label">Enquire</span>
+    <h2 class="enq-title">Tell us which<br>piece <em>speaks to you.</em></h2>
+    <p class="enq-sub">There is no checkout. We respond to every enquiry personally, usually within 48 hours. Shipping is worldwide, fully insured.</p>
+  </div>
+
+  <div class="enq-form reveal reveal-d1" id="enqFormWrap">
+    <div class="enq-row">
+      <div class="enq-field">
+        <label class="enq-field-label">First name</label>
+        <input type="text" class="enq-input" placeholder="James" id="enqFirst">
+      </div>
+      <div class="enq-field">
+        <label class="enq-field-label">Last name</label>
+        <input type="text" class="enq-input" placeholder="Morrison" id="enqLast">
+      </div>
+    </div>
+    <div class="enq-field">
+      <label class="enq-field-label">Email</label>
+      <input type="email" class="enq-input" placeholder="james@example.com" id="enqEmail">
+    </div>
+    <div class="enq-field">
+      <label class="enq-field-label">Piece of interest</label>
+      <select class="enq-select enq-input" id="enqPiece">
+        <option value="" disabled selected>Select a piece</option>
+      </select>
+    </div>
+    <div class="enq-field">
+      <label class="enq-field-label">Message</label>
+      <textarea class="enq-textarea" placeholder="What draws you to this piece? Any questions about provenance, shipping, or the collection process are welcome." id="enqMsg"></textarea>
+    </div>
+    <button class="enq-submit" onclick="submitEnquiry()">Send enquiry</button>
+    <p class="enq-note">Your enquiry is read by a person, not a system. We do not share your details with third parties.</p>
+  </div>
+
+  <div class="confirm-screen" id="confirmScreen">
+    <span class="enq-label">Received</span>
+    <h2 class="enq-title" style="font-size:2rem">Thank you.</h2>
+    <p class="enq-sub">We'll be in touch within 48 hours.</p>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press-section reveal">
+  <div class="press-left">
+    <span class="press-label">Press & stockists</span>
+    <p class="press-text">For editorial features, <em>gifting stories,</em> or retail partnerships.</p>
+  </div>
+  <a href="mailto:press@terrarara.com" class="press-contact">press@terrarara.com</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-brand">Terra Rara</span>
+  <span class="foot-mid">Geological objects — Est. 2024</span>
+  <div class="foot-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#enquiry">Contact</a>
+  </div>
+</footer>
+
+<!-- DETAIL OVERLAY -->
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-nav">
+    <button class="detail-back" onclick="closeDetail()">← Back to collection</button>
+    <span class="detail-ref" id="detailRef"></span>
+  </div>
+  <div class="detail-body">
+    <div class="detail-visual">
+      <div class="detail-stone-display" id="detailEmoji"></div>
+      <p class="detail-photo-note">Photography available upon enquiry<br>In-situ & studio imagery</p>
+    </div>
+    <div class="detail-content" id="detailContent"></div>
+  </div>
+</div>
+
+<script>
+const stones = [
+  {
+    id: 'TR-2024-047',
+    name: 'Olivine Basalt',
+    location: 'Iceland',
+    site: 'South Coast',
+    coords: '63°52′N — 18°04′W',
+    type: 'Volcanic',
+    age: '~12,000 years',
+    weight: '287 g',
+    date: '14 March 2024',
+    emoji: '🪨',
+    sold: false,
+    story: 'The south coast of Iceland in early March. The black sand stretches flat to the horizon, and the Vatnajökull sits behind it like a pale wall. This stone came from a lava field three kilometres from the water's edge.',
+    desc: 'An olivine basalt formed during the post-glacial volcanic period. The characteristic green olivine crystals indicate high-pressure formation deep within the mantle. Aphanitic texture, matte surface, exceptional structural integrity.',
+    specs: { 'Mineralogy': 'Basalt · Olivine', 'Mohs hardness': '6 – 7', 'Dimensions': '11 × 8 × 4 cm', 'GPS': '63°52′N 18°04′W' }
+  },
+  {
+    id: 'TR-2024-031',
+    name: 'Pink Granite',
+    location: 'France',
+    site: 'Brittany, Finistère',
+    coords: '48°44′N — 3°33′W',
+    type: 'Marine',
+    age: '~300 million years',
+    weight: '445 g',
+    date: '2 June 2024',
+    emoji: '🌸',
+    sold: false,
+    story: 'The Côte de Granit Rose at low tide, the sea pulling back from boulders the colour of old salmon. This piece spent three hundred million years being shaped by the Atlantic. It shows.',
+    desc: 'A potassium feldspar-rich granite polished over three hundred million years of Atlantic erosion. The rose colouration is due to a high orthoclase concentration. Near-perfect roundness, satin-smooth to the touch.',
+    specs: { 'Mineralogy': 'Granite · Orthoclase', 'Mohs hardness': '6.5', 'Dimensions': '13 × 10 × 7 cm', 'GPS': '48°44′N 3°33′W' }
+  },
+  {
+    id: 'TR-2024-058',
+    name: 'Obsidian',
+    location: 'Ethiopia',
+    site: 'Rift Valley',
+    coords: '8°24′N — 38°57′E',
+    type: 'Volcanic',
+    age: '~80,000 years',
+    weight: '162 g',
+    date: '18 September 2024',
+    emoji: '⬛',
+    sold: false,
+    story: 'The Ethiopian Rift Valley in the dry season. The earth is ochre and cracked, and this stone was sitting in the open, drawing heat. Eighty thousand years old. It looked new.',
+    desc: 'Volcanic glass of absolute purity, formed during ultra-rapid cooling of rhyolitic lava. Natural edges intact. Mirror-like vitreous lustre on all faces. One of the sharpest natural materials on earth.',
+    specs: { 'Mineralogy': 'Volcanic glass', 'Mohs hardness': '5 – 5.5', 'Dimensions': '9 × 6 × 3 cm', 'GPS': '8°24′N 38°57′E' }
+  },
+  {
+    id: 'TR-2024-022',
+    name: 'White Quartzite',
+    location: 'Namibia',
+    site: 'Namib Desert',
+    coords: '24°17′S — 15°30′E',
+    type: 'Desert',
+    age: '~500 million years',
+    weight: '318 g',
+    date: '27 January 2024',
+    emoji: '🤍',
+    sold: true,
+    story: 'Half a billion years of desert wind. The Namib is the oldest desert on earth, and this stone has been here for most of it. Translucent under direct light. Cool to the touch even in the heat.',
+    desc: 'Metamorphic quartzite polished by Namib winds over geological time. Translucent under direct light. Unusually cool tactile temperature. Surfaces smooth as marble.',
+    specs: { 'Mineralogy': 'Quartzite', 'Mohs hardness': '7 – 8', 'Dimensions': '10 × 9 × 6 cm', 'GPS': '24°17′S 15°30′E' }
+  },
+  {
+    id: 'TR-2024-071',
+    name: 'Alpine Schist',
+    location: 'France / Switzerland',
+    site: 'Haute-Savoie Alps',
+    coords: '45°55′N — 6°52′E',
+    type: 'Glacial',
+    age: '~40 million years',
+    weight: '203 g',
+    date: '7 July 2024',
+    emoji: '✨',
+    sold: false,
+    story: 'Above 2,000 metres on the French side of the Alps, where the melt water runs clear and the rock beneath the ice is still being uncovered. This schist has been waiting forty million years.',
+    desc: 'Glaucophane-bearing schist formed during Alpine subduction. The micaceous layers catch light at every angle with a silken lustre. Glacial striations visible on two faces — a record of the ice that once moved over it.',
+    specs: { 'Mineralogy': 'Schist · Glaucophane', 'Mohs hardness': '5.5 – 6', 'Dimensions': '8 × 6 × 2 cm', 'GPS': '45°55′N 6°52′E' }
+  },
+  {
+    id: 'TR-2024-039',
+    name: 'Coral Limestone',
+    location: 'Malta',
+    site: 'Gozo Island',
+    coords: '36°01′N — 14°14′E',
+    type: 'Marine',
+    age: '~25 million years',
+    weight: '521 g',
+    date: '11 May 2024',
+    emoji: '🪸',
+    sold: false,
+    story: 'Gozo in May, the sea impossibly blue. This limestone formed in a tropical lagoon that no longer exists — built from the accumulated shells of foraminifera over millions of years. The colour is honey in sunlight.',
+    desc: 'Globigerinite limestone formed from foraminiferal accumulation in a vanished tropical lagoon. Fossil coral impressions visible to the naked eye. Characteristic honey colouration, warm tactile quality.',
+    specs: { 'Mineralogy': 'Bioclastic limestone', 'Mohs hardness': '3 – 4', 'Dimensions': '15 × 11 × 9 cm', 'GPS': '36°01′N 14°14′E' }
+  }
+];
+
+// Populate enquiry select
+const sel = document.getElementById('enqPiece');
+stones.filter(s => !s.sold).forEach(s => {
+  const o = document.createElement('option');
+  o.value = s.id;
+  o.textContent = `${s.name} — ${s.location}`;
+  sel.appendChild(o);
+});
+const other = document.createElement('option');
+other.value = 'other';
+other.textContent = 'General enquiry / upcoming collections';
+sel.appendChild(other);
+
+// Render list
+function renderList() {
+  const list = document.getElementById('stonesList');
+  list.innerHTML = stones.map((s, i) => `
+    <div class="stone-row${s.sold ? ' sold' : ''}"
+         style="opacity:0;transition:opacity .6s ease ${i*0.08}s"
+         onclick="${s.sold ? '' : `openDetail('${s.id}')`}">
+      <div class="sr-location">
+        <span class="sr-loc-country">${s.type} · ${s.location}</span>
+        <div class="sr-loc-name">${s.site}</div>
+        <div class="sr-loc-coords">${s.coords}</div>
+      </div>
+      <div class="sr-divider"></div>
+      <div class="sr-main">
+        <div class="sr-thumb">${s.emoji}</div>
+        <div class="sr-info">
+          <div class="sr-name">${s.name}</div>
+          <div class="sr-desc">${s.story.substring(0, 110)}…</div>
+        </div>
+      </div>
+      <div class="sr-divider"></div>
+      <div class="sr-right">
+        <span class="sr-age">${s.age}</span>
+        ${s.sold
+          ? `<span class="sr-sold-tag">Sold</span>`
+          : `<span class="sr-cta">View piece</span>`
+        }
+      </div>
+    </div>
+  `).join('');
+
+  requestAnimationFrame(() => {
+    list.querySelectorAll('.stone-row').forEach(el => el.style.opacity = '1');
+  });
+}
+
+// Detail overlay
+function openDetail(id) {
+  const s = stones.find(x => x.id === id);
+  if (!s) return;
+
+  document.getElementById('detailRef').textContent = s.id;
+  document.getElementById('detailEmoji').textContent = s.emoji;
+
+  // Pre-select in enquiry form
+  document.getElementById('enqPiece').value = s.id;
+
+  document.getElementById('detailContent').innerHTML = `
+    <span class="dc-pre">${s.type} · ${s.location}</span>
+    <h2 class="dc-name">${s.name}</h2>
+    <p class="dc-origin">${s.site} &nbsp;·&nbsp; ${s.coords}</p>
+    <p class="dc-story">${s.story}</p>
+    <p class="dc-desc">${s.desc}</p>
+    <div class="dc-specs">
+      ${Object.entries(s.specs).map(([k,v]) =>
+        `<div class="dc-spec"><span class="dcs-label">${k}</span><span class="dcs-value">${v}</span></div>`
+      ).join('')}
+      <div class="dc-spec"><span class="dcs-label">Collected</span><span class="dcs-value">${s.date}</span></div>
+      <div class="dc-spec"><span class="dcs-label">Weight</span><span class="dcs-value">${s.weight}</span></div>
+    </div>
+    <div class="dc-enquiry">
+      <h3 class="de-head">Enquire about this piece</h3>
+      <p class="de-sub">We'll confirm availability and details within 48 hours. No payment at this stage.</p>
+      <div class="de-field">
+        <label class="de-label">Your name</label>
+        <input type="text" class="de-input" placeholder="Full name" id="deName">
+      </div>
+      <div class="de-field">
+        <label class="de-label">Email</label>
+        <input type="email" class="de-input" placeholder="you@example.com" id="deEmail">
+      </div>
+      <div class="de-field">
+        <label class="de-label">Message (optional)</label>
+        <textarea class="de-textarea" placeholder="Any questions about provenance, shipping, or the piece itself." id="deMsg"></textarea>
+      </div>
+      <button class="de-submit" onclick="submitDetailEnquiry('${s.id}','${s.name}')">Send enquiry</button>
+      <p class="de-note">Read by a person. Responded to within 48 hours. Your details are never shared.</p>
+    </div>
+  `;
+
+  document.getElementById('detailOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetail() {
+  document.getElementById('detailOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitDetailEnquiry(id, name) {
+  const email = document.getElementById('deEmail').value;
+  const dname = document.getElementById('deName').value;
+  if (!dname.trim() || !email.includes('@')) {
+    document.getElementById('deEmail').style.borderBottomColor = '#c00';
+    return;
+  }
+  closeDetail();
+  document.getElementById('enqFormWrap').style.display = 'none';
+  document.getElementById('confirmScreen').classList.add('show');
+  document.getElementById('enquiry').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Global enquiry
+function submitEnquiry() {
+  const email = document.getElementById('enqEmail').value;
+  const first = document.getElementById('enqFirst').value;
+  if (!first.trim() || !email.includes('@')) {
+    document.getElementById('enqEmail').style.borderBottomColor = '#c00';
+    return;
+  }
+  document.getElementById('enqFormWrap').style.display = 'none';
+  document.getElementById('confirmScreen').classList.add('show');
+}
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDetail();
+});
+
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+renderList();
+</script>
+</body>
+</html>
