@@ -1632,28 +1632,84 @@ function closeDetail() {
   document.body.style.overflow = '';
 }
  
-function submitDetailEnquiry(id, name) {
+async function submitDetailEnquiry(id, name) {
   const email = document.getElementById('deEmail').value;
   const dname = document.getElementById('deName').value;
+  const msg = document.getElementById('deMsg').value;
+
   if (!dname.trim() || !email.includes('@')) {
     document.getElementById('deEmail').style.borderBottomColor = '#c00';
     return;
   }
-  closeDetail();
-  document.getElementById('enqFormWrap').style.display = 'none';
-  document.getElementById('confirmScreen').classList.add('show');
-  document.getElementById('enquiry').scrollIntoView({ behavior: 'smooth' });
+
+  const btn = document.querySelector('.de-submit');
+  btn.textContent = 'Sending…';
+  btn.style.opacity = '0.5';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/xqeoyyvp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: dname, email, piece: `${name} (${id})`, message: msg })
+    });
+    if (res.ok) {
+      closeDetail();
+      document.getElementById('enqFormWrap').style.display = 'none';
+      document.getElementById('confirmScreen').classList.add('show');
+      document.getElementById('enquiry').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      btn.textContent = 'Send enquiry';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  } catch(e) {
+    btn.textContent = 'Send enquiry';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email us directly.');
+  }
 }
  
-function submitEnquiry() {
+async function submitEnquiry() {
   const email = document.getElementById('enqEmail').value;
   const first = document.getElementById('enqFirst').value;
+  const last = document.getElementById('enqLast').value;
+  const piece = document.getElementById('enqPiece').value;
+  const msg = document.getElementById('enqMsg').value;
+
   if (!first.trim() || !email.includes('@')) {
     document.getElementById('enqEmail').style.borderBottomColor = '#c00';
     return;
   }
-  document.getElementById('enqFormWrap').style.display = 'none';
-  document.getElementById('confirmScreen').classList.add('show');
+
+  const btn = document.querySelector('.enq-submit');
+  btn.textContent = 'Sending…';
+  btn.style.opacity = '0.5';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/xqeoyyvp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: `${first} ${last}`, email, piece, message: msg })
+    });
+    if (res.ok) {
+      document.getElementById('enqFormWrap').style.display = 'none';
+      document.getElementById('confirmScreen').classList.add('show');
+    } else {
+      btn.textContent = 'Send enquiry';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  } catch(e) {
+    btn.textContent = 'Send enquiry';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email us directly.');
+  }
 }
  
 document.addEventListener('keydown', e => {
